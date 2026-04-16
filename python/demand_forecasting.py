@@ -47,9 +47,9 @@ X = data[features]
 y = data["Sales"]
 
 model = RandomForestRegressor(
-    n_estimators=20,
-    random_state=42,
-    n_jobs=-1
+    n_estimators=5,
+    max_depth=5,
+    random_state=42
 )
 model.fit(X_train, y_train)
 
@@ -65,6 +65,6 @@ print(f"MAE: {mae:.2f}")
 print(f"R2 Score: {r2:.4f}")
 
 # Save model
-joblib.dump(model, "models/demand_forecast_model.pkl")
+joblib.dump(model, "models/demand_forecast_model_sample.pkl")
 
 print("Model saved in models/demand_forecast_model.pkl")
